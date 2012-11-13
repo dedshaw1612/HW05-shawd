@@ -11,17 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\Desktop\materials\materials.d\Graph.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\materials\materials.d\GraphAlgs.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\materials\materials.d\ListGraph.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\materials\materials.d\MatrixGraph.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\materials\materials.d\StarbucksMap.h" />
-    <ClInclude Include="..\..\..\..\..\Desktop\materials\materials.d\Tester.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphAlgs.h" />
+    <ClInclude Include="ListGraph.h" />
+    <ClInclude Include="MatrixGraph.h" />
+    <ClInclude Include="StarbucksMap.h" />
+    <ClInclude Include="Tester.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Desktop\materials\materials.d\Controller.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\materials\materials.d\StarbucksMap.cpp" />
-    <ClCompile Include="..\..\..\..\..\Desktop\materials\materials.d\Tester.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="MatrixGraph.cpp" />
+    <ClCompile Include="StarbucksMap.cpp" />
+    <ClCompile Include="Tester.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Desktop\materials\materials.d\Starbucks.csv" />
