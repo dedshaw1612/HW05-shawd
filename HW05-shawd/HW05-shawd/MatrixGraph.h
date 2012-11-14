@@ -21,7 +21,7 @@ class MatrixGraph : public Graph {
   //EdgeWeight is a double
   virtual EdgeWeight weight(NodeID u, NodeID v) const;
   virtual std::list<NWPair> getAdj(NodeID u) const;
-  //getAdj returns a pair<unsigned int, double> 
+  //getAdj returns a list of pair<unsigned int, double> 
   //which is a NWPair:   <NodeID, EdgeWeight>
 
 
