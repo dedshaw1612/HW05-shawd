@@ -5,6 +5,7 @@
 
 #pragma once
 
+//doubly linked list of NWPairs
 typedef std::list<NWPair> EList;
 
 class ListGraph : public Graph {
@@ -25,6 +26,20 @@ class ListGraph : public Graph {
  private:
   ListGraph() {;}
 
+  //an array of doubly linked lists which contain NWPairs
+  /*
+  Figure 17.10 from reading
+  0[]->[6]->[5]->[1]->[2]
+  1[]->[0]
+  2[]->[0]
+  3[]->[5]->[4]
+  4[]->[6]->[5]->[3]
+  5[]->[3]->[0]->[4]
+  .
+  .
+  ect
+
+  */
   std::vector<EList> edgeList;
   int num_edges;
 };

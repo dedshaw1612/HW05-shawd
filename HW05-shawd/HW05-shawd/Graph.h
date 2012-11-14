@@ -17,7 +17,7 @@
  /*
  * Useful typedefs, primarily for the purpose of read-ability.
  */
-typedef unsigned NodeID;
+typedef unsigned NodeID;//same as unsigned int: 0 to 4294967295
 typedef double EdgeWeight;
 typedef std::pair<NodeID, EdgeWeight> NWPair;
 
@@ -35,6 +35,13 @@ class Graph {
    *     There is no edge between u and v.
    *     weight > 0
    */
+
+  /*
+  David: it should be possible that 1 node can connect to every other node in the graph.
+  The precondition for the addEdge function implies that certain edges will not exist because
+  it intersects with another edge. If this is true, there will need to be a rule
+  for how to add edges, because a shorter edge should be created if it intersects with a longer one.
+  */
   virtual void addEdge(NodeID u, NodeID v, EdgeWeight weight) = 0;
   
 
@@ -54,7 +61,7 @@ class Graph {
   virtual std::list<NWPair> getAdj(NodeID u) const = 0;
 
   /*
-   * Return the degree (i.e. the number of neighorbs) of node u.
+   * Return the degree (i.e. the number of neighbors) of node u.
    *
    * Preconditions: u is a legal label;
    */

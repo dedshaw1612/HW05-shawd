@@ -39,8 +39,6 @@ ostream& operator<<(ostream& out, const Store& S) {
   return out;
 }
 
-
-
 /*
  * A class containing all StartbucksMap information.
  */
