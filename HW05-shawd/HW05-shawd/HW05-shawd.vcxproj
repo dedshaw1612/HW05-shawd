@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="ListGraph.cpp" />
     <ClCompile Include="MatrixGraph.cpp" />
     <ClCompile Include="StarbucksMap.cpp" />
     <ClCompile Include="Tester.cpp" />

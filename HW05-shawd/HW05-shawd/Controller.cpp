@@ -25,7 +25,6 @@
 
 using namespace std;
 
-
 Graph* createStarbucksGraph(vector<Store> storeList, bool use_matrix) {
   Graph* G;
   if (use_matrix)

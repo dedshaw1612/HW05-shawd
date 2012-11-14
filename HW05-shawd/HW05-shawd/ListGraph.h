@@ -40,6 +40,7 @@ class ListGraph : public Graph {
   ect
 
   */
+  //typedef std::list<NWPair> EList;
   std::vector<EList> edgeList;
   int num_edges;
 };
