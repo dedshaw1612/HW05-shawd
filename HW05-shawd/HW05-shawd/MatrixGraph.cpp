@@ -9,7 +9,7 @@ MatrixGraph::MatrixGraph(unsigned num_nodes) {
 	//doubley nested for loop to go through and initialize all the spaces?
 	for(int i = 0;i < num_nodes;i++) {
 		for(int j = 0;j < num_nodes;j++) {
-			M[i][j] = 0.0;//EdgeWeight();//no idea if this is right.
+			M[i][j] = 0.0;
 
 		}//end i for loop
 	}//end j for loop
@@ -46,7 +46,7 @@ unsigned MatrixGraph::degree(NodeID u) const {
 }
 
 unsigned MatrixGraph::size() const {
-	return (this->M.size()*this->M[0].size());//?? assuming M.size() & M[0].size()
+	return (pow((double)this->M.size(),2));//*this->M[0].size());//?? assuming M.size() & M[0].size() works
 }
 
 EdgeWeight MatrixGraph::weight(NodeID u, NodeID v) const {

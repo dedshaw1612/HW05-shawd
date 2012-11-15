@@ -40,7 +40,7 @@ class Graph {
   David: it should be possible that 1 node can connect to every other node in the graph.
   The precondition for the addEdge function implies that certain edges will not exist because
   it intersects with another edge. If this is true, there will need to be a rule
-  for how to add edges, because a shorter edge should be created if it intersects with a longer one.
+  for how to add edges
   */
   virtual void addEdge(NodeID u, NodeID v, EdgeWeight weight) = 0;
   
