@@ -148,13 +148,15 @@ bool Tester::test_7() {
 
   return cleanAndExit(G, true);
 }
-      
+
+//matrix graph failed
 bool Tester::test_8() {
   unsigned n = randInt(40, 70);
   Graph* G = createGraph(n);
   return cleanAndExit(G, G->size() == n);
 }
 
+//matrix graph failed
 bool Tester::test_9() {
   unsigned n = randInt(40, 70);
   Graph* G =createGraph(n);

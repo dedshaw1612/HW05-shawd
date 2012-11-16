@@ -17,7 +17,7 @@ void ListGraph::addEdge(NodeID u, NodeID v, EdgeWeight weight) {
 	NWPair nw = NWPair();//NWPair* nw = new NWPair();
 	nw.first = v;
 	nw.second = weight;
-	this->edgeList[u].push_back(nw);
+	edgeList[u].push_back(nw);
 }
 
 EdgeWeight ListGraph::weight(NodeID u, NodeID v) const {
