@@ -149,14 +149,13 @@ bool Tester::test_7() {
   return cleanAndExit(G, true);
 }
 
-//matrix graph failed
 bool Tester::test_8() {
   unsigned n = randInt(40, 70);
   Graph* G = createGraph(n);
   return cleanAndExit(G, G->size() == n);
 }
 
-//matrix graph failed
+//list graph failed
 bool Tester::test_9() {
   unsigned n = randInt(40, 70);
   Graph* G =createGraph(n);
@@ -165,8 +164,8 @@ bool Tester::test_9() {
   for (unsigned i=0; i < n; i++)
     for (unsigned j=i+1; j < n; j++)
       if (i != j && randInt(0,3)==0) {
-	G->addEdge(i, j, (1.0*rand()/rand()));
-	num_edges++;
+		G->addEdge(i, j, (1.0*rand()/rand()));
+		num_edges++;
       }
 
   return cleanAndExit(G, G->numEdges() == num_edges);
