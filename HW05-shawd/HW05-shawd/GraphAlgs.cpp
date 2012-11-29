@@ -4,6 +4,8 @@
  
 using namespace std;
 
+Tour answer_;
+
 EdgeWeight pathDist(Graph* G,int* arr, int n) {
 	EdgeWeight path = 0.0;
 	for(int i=0;i<n-1;i++) {
@@ -13,17 +15,17 @@ EdgeWeight pathDist(Graph* G,int* arr, int n) {
 	return path;
 }
 
-void GraphAlgs::tour(Graph* G,int* arr, int n, int startingPoint) {
+void tour(Graph* G,int* arr, int n, int startingPoint) {
 	//pathDist is the distance of the best path, here we intialize it to whatever we're handed
-	EdgeWeight pathDist;
+	EdgeWeight pathDistance;
 	int* path = new int[n];
 	path = arr;
 	if(n - startingPoint == 1) {
 		//check if arr is better than best tour
-		pathDist = this->pathDist(G,arr,n);
+		pathDistance = pathDist(G,arr,n);
 		//answer_.second = this->pathDist(G,arr,n);
-		if(answer_.second > pathDist) {
-			answer_.second = pathDist;
+		if(answer_.second > pathDistance) {
+			answer_.second = pathDistance;
 		}
 	}
 	else {
@@ -38,7 +40,7 @@ void GraphAlgs::tour(Graph* G,int* arr, int n, int startingPoint) {
 
 }
 
-std::pair<std::vector<NodeID>, EdgeWeight> GraphAlgs::TSP(Graph* G) {
+std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G) {
 	int n = G->size();
 	int* arr = new int[n];
 	EList::const_iterator it;
@@ -47,7 +49,7 @@ std::pair<std::vector<NodeID>, EdgeWeight> GraphAlgs::TSP(Graph* G) {
 		arr[i] = it->first;
 		i++;
 	}
-	answer_.second = this->pathDist(G,arr,n);
+	answer_.second = pathDist(G,arr,n);
 	tour(G,arr,n,0);
 	//vector<pair<vector<NodeID>,EdgeWeight> > permuations;
 	pair<vector<NodeID>,EdgeWeight> ans;
