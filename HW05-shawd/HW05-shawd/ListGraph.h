@@ -23,6 +23,8 @@ class ListGraph : public Graph {
   virtual unsigned size() const;
   virtual unsigned numEdges() const;
 
+
+
  private:
   ListGraph() {;}
 

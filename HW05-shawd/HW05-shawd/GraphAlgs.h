@@ -4,7 +4,20 @@
 
 #pragma once
 
+typedef std::pair<std::vector<NodeID>, EdgeWeight> Tour;
 
+class GraphAlgs {
+public:
+	std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G);
+	//std::pair<std::vector<NodeID>, EdgeWeight> tour
+	void tour(Graph* G, int* arr, int n, int startPoint);
+	EdgeWeight pathDist(Graph* G,int* arr, int n);
+
+	Tour answer_;
+
+private:
+
+};
 /*
  * Solves the Traveling Salesperson Problem: finding the shortest cycle through a graph that 
  * vists every node exactly once (with exception of the first node, which is repeated as the 
@@ -20,4 +33,4 @@
  *     Every pair of nodes u,v  (u != v) has an edge connecting the of weight > 0.
  */
 
-std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G);
+

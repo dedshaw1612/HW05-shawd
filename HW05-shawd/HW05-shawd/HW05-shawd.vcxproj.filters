@@ -50,6 +50,9 @@
     <ClCompile Include="ListGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GraphAlgs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\Desktop\materials\materials.d\Starbucks.csv">
