@@ -35,7 +35,7 @@ EdgeWeight ListGraph::weight(NodeID u, NodeID v) const {
 	return 0.0;
 }
 
-std::list<NWPair> ListGraph::getAdj(NodeID u) const {
+EList ListGraph::getAdj(NodeID u) const {
 	EList::const_iterator i;
 	std::list<NWPair> adj = std::list<NWPair>();
 	NWPair adjNode = NWPair();
