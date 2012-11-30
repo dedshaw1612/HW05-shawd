@@ -10,7 +10,7 @@ typedef std::pair<std::vector<NodeID>, EdgeWeight> Tour;
 	std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G);
 	//std::pair<std::vector<NodeID>, EdgeWeight> tour
 	void tour(Graph* G, int* arr, int n, int startPoint);
-	EdgeWeight pathDist(Graph* G,int* arr, int n);
+	EdgeWeight pathDist(Graph* G,int* arr, unsigned n);
 
 	
 
