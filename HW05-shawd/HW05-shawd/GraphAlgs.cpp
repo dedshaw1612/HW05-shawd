@@ -22,9 +22,9 @@ void tour(Graph* G,int* arr, int n, int startingPoint) {
 	int* path;
 	path = new int[n];
 	path = arr;
-	for(int i = 0;i<n;i++) {
-		answer_.first[i] = arr[i];
-	}
+	//for(int i = 0;i<n;i++) {
+		//answer_.first[i] = arr[i];
+	//}
 	if(n - startingPoint == 1) {
 		//check if arr is better than best tour
 		pathDistance = pathDist(G,arr,n);
@@ -69,7 +69,12 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G) {
 		i++;
 	}
 
+	for(int i = 0;i<n;i++) {
+		answer_.first[i] = arr[i];
+	}
+
 	answer_.second = pathDist(G,arr,n);
+	
 	tour(G,arr,n,0);
 	//vector<pair<vector<NodeID>,EdgeWeight> > permuations;
 	//pair<vector<NodeID>,EdgeWeight> ans;
