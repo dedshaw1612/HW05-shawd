@@ -19,12 +19,16 @@ EdgeWeight pathDist(Graph* G,int* arr, unsigned n) {
 void tour(Graph* G,int* arr, int n, int startingPoint) {
 	//pathDist is the distance of the best path, here we intialize it to whatever we're handed
 	EdgeWeight pathDistance;
-	int* path;
-	path = new int[n];
-	path = arr;
-	//for(int i = 0;i<n;i++) {
-		//answer_.first[i] = arr[i];
-	//}
+	EdgeWeight badBranch;
+
+	//
+	for(int i = 2;i < n;i++) {
+		badBranch = pathDist(G,arr,i);
+		if (badBranch > answer_.second)
+			return;
+	}
+	//
+
 	if(n - startingPoint == 1) {
 		//check if arr is better than best tour
 		pathDistance = pathDist(G,arr,n);
@@ -76,8 +80,6 @@ std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G) {
 	answer_.second = pathDist(G,arr,n);
 	
 	tour(G,arr,n,0);
-	//vector<pair<vector<NodeID>,EdgeWeight> > permuations;
-	//pair<vector<NodeID>,EdgeWeight> ans;
 	
 	return answer_;
 
