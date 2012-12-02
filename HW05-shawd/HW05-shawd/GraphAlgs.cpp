@@ -1,3 +1,9 @@
+/*
+David Shaw
+CSE 274 Final Homework
+Attempted all goals except for drawing with cinder
+*/
+
 #include "GraphAlgs.h"
 #include "ListGraph.h"
 #include "MatrixGraph.h"
@@ -21,9 +27,7 @@ EdgeWeight pathDist(Graph* G,int* arr, unsigned n) {
 void tour(Graph* G,int* arr, int n, int startingPoint) {
 	//pathDist is the distance of the best path, here we intialize it to whatever we're handed
 	EdgeWeight pathDistance;
-	EdgeWeight badBranch;
-
-	
+	EdgeWeight badBranch = 0.0;
 
 	if(n - startingPoint == 1) {
 		
@@ -38,15 +42,19 @@ void tour(Graph* G,int* arr, int n, int startingPoint) {
 		}
 	}
 
-	
-
 	else {
 
-		/*unsure if this is implemented correctly, but the idea is whenever tour is called it looks at the path so far for all nodes
+		/*The idea is whenever tour is called it looks at the path so far for all nodes
 		and if at any point it ends up longer than the the shortest tour we exit out of the tour in that branch.
+		This iterates through the entire path staring off with the first two nodes, then first 3 nodes, etc.
+		and keeps adding up until it finds a bigger number or keeps touring.
 		*/
-		for(int i = 2;i < n;i++) {
-			badBranch = pathDist(G,arr,i);
+		for(int i = 0;i < n-1;i++) {
+			//optimized for speed. Used to be badBranch = pathDist() but the function
+			//would be called every iteration and do most of the same calculations so
+			//this seemed to me almost twice as fast as the function call.
+			badBranch += G->weight(arr[i],arr[i+1]);
+		
 			if (badBranch > answer_.second)
 				return;
 		}

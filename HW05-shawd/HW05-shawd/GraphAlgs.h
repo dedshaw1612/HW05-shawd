@@ -4,6 +4,7 @@
 
 #pragma once
 
+//the final answer being returned from TSP.
 typedef std::pair<std::vector<NodeID>, EdgeWeight> Tour;
 
 
@@ -13,9 +14,6 @@ typedef std::pair<std::vector<NodeID>, EdgeWeight> Tour;
 	
 	//method that calculates the tour distance given an array
 	EdgeWeight pathDist(Graph* G,int* arr, unsigned n);
-
-	
-
 
 /*
  * Solves the Traveling Salesperson Problem: finding the shortest cycle through a graph that 

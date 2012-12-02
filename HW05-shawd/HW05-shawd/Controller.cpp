@@ -61,6 +61,7 @@ void testSingleTSP(StarbucksMap& SB, int size, bool use_matrix) {
   pair<vector<NodeID>, EdgeWeight> p = TSP(G);
 
   EdgeWeight actual = 0;
+
   for (int i=0; i < size-1; i++)
     actual += G->weight(p.first[i], p.first[i+1]);
   actual += G->weight(p.first[size-1], p.first[0]);
@@ -126,8 +127,10 @@ int main(int argc, char** argv) {
   
   StarbucksMap SB;
 
-  testSingleTSP(SB, 5, true);
-  testSingleTSP(SB, 5, false);
+	testSingleTSP(SB, 5, true);
+	testSingleTSP(SB, 5, false);
+
+
 
   pair<int,int> p = testSpeedTSP(SB, 60, true);
   
