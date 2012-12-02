@@ -8,8 +8,10 @@ typedef std::pair<std::vector<NodeID>, EdgeWeight> Tour;
 
 
 	std::pair<std::vector<NodeID>, EdgeWeight> TSP(Graph* G);
-	//std::pair<std::vector<NodeID>, EdgeWeight> tour
+	//method that uses recursion to find the best tour
 	void tour(Graph* G, int* arr, int n, int startPoint);
+	
+	//method that calculates the tour distance given an array
 	EdgeWeight pathDist(Graph* G,int* arr, unsigned n);
 
 	
