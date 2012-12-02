@@ -21,13 +21,7 @@ void tour(Graph* G,int* arr, int n, int startingPoint) {
 	EdgeWeight pathDistance;
 	EdgeWeight badBranch;
 
-	//
-	for(int i = 2;i < n;i++) {
-		badBranch = pathDist(G,arr,i);
-		if (badBranch > answer_.second)
-			return;
-	}
-	//
+	
 
 	if(n - startingPoint == 1) {
 		//check if arr is better than best tour
@@ -40,7 +34,18 @@ void tour(Graph* G,int* arr, int n, int startingPoint) {
 			}
 		}
 	}
+
+	
+
 	else {
+
+		//
+		for(int i = 2;i < n;i++) {
+			badBranch = pathDist(G,arr,i);
+			if (badBranch > answer_.second)
+				return;
+		}
+		//
 		
 		for(int i = startingPoint; i < n; i++) {
 			swap(arr[startingPoint],arr[i]);

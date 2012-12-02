@@ -91,10 +91,7 @@ pair<int,int> testSpeedTSP(StarbucksMap& SB, double time_limit, bool use_matrix)
 			  break;
 		  totalTime = newTime;
 		  n++;
-		  if(n == 14) {
-			  //do stuff
-			  cout << "computing 14 cities..." << endl;
-		  }
+
 	}
 	return make_pair(n,totalTime);
 }
